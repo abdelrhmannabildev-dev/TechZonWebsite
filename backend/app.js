@@ -11,7 +11,9 @@ app.use(cors());
 const productRouter = require("./routes/product.routes");
 const orderRouter = require("./routes/order.routes");
 const categoryRouter = require("./routes/category.routes");
+const authRouter = require("./routes/auth.routes");
 
+app.use("/auth", authRouter);
 app.use("/categories", categoryRouter);
 app.use("/products", productRouter);
 app.use("/order", orderRouter);

@@ -54,4 +54,4 @@ const updateCategory = async (req, res) => {
         res.status(500).json({ error: "Internal server error" });
     }
 }
-module.exports = { getAllCategories, getProductByCategory ,addCategory,deleteCategory,updateCategory};
+module.exports = { getAllCategories ,addCategory,deleteCategory,updateCategory};

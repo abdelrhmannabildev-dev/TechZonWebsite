@@ -1,0 +1,44 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    background-color: var(--bg);
+    box-shadow: var(--shadow);
+    z-index: 999;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+.logo h1{
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--primary);
+}
+a{
+    position: relative;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+a::before{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--text-h);
+    transition: width 0.3s ease-in-out;
+}
+a:hover::before{
+    width: 100%;
+}
+a:hover{
+    color: var(--text-h);
+}

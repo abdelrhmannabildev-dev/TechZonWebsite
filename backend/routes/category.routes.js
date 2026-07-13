@@ -1,6 +1,6 @@
 const  { getAllCategories ,addCategory,deleteCategory,updateCategory}=require("../controllers/category.controller");
-const authMiddleware = require("../middleware/authMiddleware");
-const isAdmin = require("../middleware/isAdmin");
+const authMiddleware = require("../middleware/authenticate.middleware");
+const isAdmin = require("../middleware/admin.middleware");
 const router = require("express").Router(); 
 
 router.get("/",getAllCategories);

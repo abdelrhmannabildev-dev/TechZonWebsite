@@ -1,0 +1,95 @@
+.hero{
+    display: grid;
+    grid-template-areas: 
+    "hero-txt hero-txt"
+    "categories categories"
+    "explore-btn explore-btn";
+    min-height: 80vh;
+    margin-bottom: 40px;
+    background: url("./images/hero.svg");
+    background-size: cover;
+    animation: heroAnimation 1s ease-in-out;
+}
+@keyframes heroAnimation {
+    0%{
+        opacity: 0;
+        transform: translate(0,-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0,0px);
+    }
+}
+.hero-txt{
+    grid-area: hero-txt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    margin: 0 auto;
+    text-align: center ;
+
+}
+.hero-txt h1{
+    font-size: 60px;
+    color: var(--text-h);
+    padding: 10px 0;
+}
+.hero-txt p{
+    font-size: 20px;
+    color: var(--text-h);
+    padding: 10px 0;
+}
+.categories{
+    grid-area: categories;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+.categories ul{
+    display: flex;
+    gap: 2rem;
+}
+.categories ul li{
+    list-style: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--bg);
+    box-shadow: var(--shadow);
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+.categories ul li:hover{
+    filter: brightness(1.5);
+    color: var(--text-h);
+    transform:translate(0,-5px)
+}
+.explore-btn{
+    grid-area: explore-btn;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: var(--primary);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.explore-btn:hover{
+    background-color: var(--secondary);
+    color: var(--text-h);
+    scale: 1.05;
+}
+/* 
+.hero-image{
+    grid-area: hero-img;
+    height: 500px;
+    margin: 0 auto;
+} */

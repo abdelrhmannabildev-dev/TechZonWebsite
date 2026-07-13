@@ -1,6 +1,11 @@
 import "./Hero.css"
+import {useNavigate} from "react-router-dom"
 import laptop from "./images/laptop2.png"
 function Hero() {
+    const navigate = useNavigate()
+    const handleClick = () => {
+        navigate("/products")
+    }
     return (
         <div className="hero">
             <div className="hero-txt">
@@ -16,7 +21,7 @@ function Hero() {
                 </ul>
             </div>
                 {/* <img className="hero-image" src={laptop} alt="Hero" /> */}
-            <button className="explore-btn">استكشف</button>
+            <button className="explore-btn" onClick={handleClick}>استكشف</button>
         </div>
     )   
 }

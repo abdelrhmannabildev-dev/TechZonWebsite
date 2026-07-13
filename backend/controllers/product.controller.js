@@ -5,7 +5,12 @@ const getAllProducts = async (req, res) => {
     try {
         const {category_id} = req.query;
 
-        let query = "SELECT * FROM products";
+        let query = `SELECT
+                        products.*,
+                        categories.name AS categoryName
+                    FROM products
+                    JOIN categories
+                    ON products.category_id = categories.id;`;
         let params = [];
 
         if (category_id) {
@@ -24,7 +29,13 @@ const getAllProducts = async (req, res) => {
 const getProductById = async (req, res) => {
     try {
         const { id } = req.params;
-        const [rows] = await db.query("SELECT * FROM products WHERE id = ?", [id]);
+        const [rows] = await db.query(`
+                    SELECT
+                        products.*,
+                        categories.name AS categoryName
+                    FROM products
+                    JOIN categories
+                    ON products.category_id = categories.id WHERE id = ?`, [id]);
         if (rows.length === 0) {
             return res.status(404).json({ error: "Product not found" });
         }

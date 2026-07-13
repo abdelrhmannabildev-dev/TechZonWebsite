@@ -5,6 +5,7 @@
   --text: #3F8EFC;
   --text-h: #000000;
   --bg: #f3f4f6;
+  --loading: linear-gradient(90deg, #e9edf4 25%, #c3c2c8 50%, #e9edf4 75%);
   --border: #484848;
   --surface-bg: #86d1eb;
   --accent: #ADD7F6;
@@ -35,6 +36,13 @@
     --text: #9ca3af;
     --text-h: #f3f4f6;
     --bg: #16171d;
+        --loading: linear-gradient(
+        90deg,
+        #16171d 25%,
+        #2e303a 50%,
+        #16171d 75%
+    );
+
     --border: #2e303a;
     --surface-bg: #0f225e;
     --accent: #ADD7F6;
@@ -60,6 +68,7 @@ body{
     background:var(--bg);
     color:var(--text);
     font-family:var(--sans);
+    width: 100vw;
 }
 main{
   min-height: 80vh;

@@ -1,0 +1,7 @@
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 80%;
+    margin: 10px auto 0;
+    gap: 10px;
+}

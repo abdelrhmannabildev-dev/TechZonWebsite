@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getCategories } from "../api/categoryApi";
+import { getCategories } from "../api/user/categoryApi";
 export default function useFetchProducts() {
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);

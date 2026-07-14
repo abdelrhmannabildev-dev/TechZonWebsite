@@ -1,0 +1,80 @@
+.recent-orders-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.recent-orders-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recent-orders-table thead {
+    background: var(--accent-bg);
+}
+
+.recent-orders-table th,
+.recent-orders-table td {
+    padding: 1rem;
+    text-align: left;
+}
+
+.recent-orders-table th {
+    color: var(--text-h);
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+}
+
+.recent-orders-table td {
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+}
+
+.recent-orders-table tbody tr {
+    transition: background .2s ease;
+}
+
+.recent-orders-table tbody tr:hover {
+    background: var(--accent-bg);
+}
+
+/* Status Badge */
+
+.status {
+    display: inline-block;
+    padding: .35rem .8rem;
+    border-radius: 999px;
+    font-size: .85rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status.pending {
+    background: rgba(255, 193, 7, .15);
+    color: #d97706;
+}
+
+.status.processing {
+    background: rgba(59, 130, 246, .15);
+    color: #2563eb;
+}
+
+.status.shipped {
+    background: rgba(168, 85, 247, .15);
+    color: #7c3aed;
+}
+
+.status.delivered {
+    background: rgba(34, 197, 94, .15);
+    color: #16a34a;
+}
+
+.status.cancelled {
+    background: rgba(239, 68, 68, .15);
+    color: #dc2626;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text);
+}

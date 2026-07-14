@@ -1,0 +1,66 @@
+.low-stock-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.low-stock-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.low-stock-table thead {
+    background: var(--accent-bg);
+}
+
+.low-stock-table th,
+.low-stock-table td {
+    padding: 1rem;
+    text-align: left;
+}
+
+.low-stock-table th {
+    color: var(--text-h);
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+}
+
+.low-stock-table td {
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+}
+
+.low-stock-table tbody tr {
+    transition: background .2s ease;
+}
+
+.low-stock-table tbody tr:hover {
+    background: var(--accent-bg);
+}
+
+/* Stock Badge */
+
+.stock {
+    display: inline-block;
+    min-width: 45px;
+    text-align: center;
+    padding: .35rem .75rem;
+    border-radius: 999px;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.stock.warning {
+    background: rgba(255, 193, 7, .15);
+    color: #d97706;
+}
+
+.stock.danger {
+    background: rgba(239, 68, 68, .15);
+    color: #dc2626;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text);
+}

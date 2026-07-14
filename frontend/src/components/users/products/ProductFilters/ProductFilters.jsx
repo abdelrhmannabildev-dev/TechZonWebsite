@@ -1,4 +1,4 @@
-import useFetchCategories from "../../../hooks/useFetchCategories"
+import useFetchCategories from "../../../../hooks/useFetchCategories"
 import "./ProductFilters.css"
 
 function ProductFilters(props) {

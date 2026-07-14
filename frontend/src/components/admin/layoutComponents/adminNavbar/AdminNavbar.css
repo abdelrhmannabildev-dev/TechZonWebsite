@@ -1,0 +1,19 @@
+.admin-actions{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.icon-btn{
+    transition: all .3s ease-in-out;
+}
+.icon-btn:hover{
+    rotate: 45deg;
+    translate: 0 -5px;
+}
+
+.profile-btn{
+    transition: all .3s ease-in-out;
+}
+.profile-btn:hover{
+    scale: 1.1;
+}

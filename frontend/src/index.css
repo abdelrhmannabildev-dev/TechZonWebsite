@@ -7,7 +7,7 @@
   --bg: #f3f4f6;
   --loading: linear-gradient(90deg, #e9edf4 25%, #c3c2c8 50%, #e9edf4 75%);
   --border: #484848;
-  --surface-bg: #86d1eb;
+  --surface-bg: #ffffff;
   --accent: #ADD7F6;
   --accent-bg: rgba(110, 175, 207, 0.665);
   --accent-border: rgba(49, 84, 101, 0.665);
@@ -44,7 +44,7 @@
     );
 
     --border: #2e303a;
-    --surface-bg: #0f225e;
+    --surface-bg: #1f2937;
     --accent: #ADD7F6;
     --accent-bg: rgba(110, 175, 207, 0.665);
     --accent-border: rgba(49, 84, 101, 0.665);

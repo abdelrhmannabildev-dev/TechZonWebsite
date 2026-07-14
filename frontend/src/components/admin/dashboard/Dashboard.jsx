@@ -1,7 +1,7 @@
-import {getDashboardData} from "../../../../api/admin/dashboardApi";
+import {getDashboardData} from "../../../api/admin/dashboardApi";
 import { useState, useEffect } from "react";
-import RecentOrders from "../recentOrders/RecentOrders";
-import LowStockProducts from "../lowStockProducts/LowStockProducts";
+import RecentOrders from "./recentOrders/RecentOrders";
+import LowStockProducts from "./lowStockProducts/lowStockProducts";
 import "./Dashboard.css";
 function Dashboard() {
     const [dashboardData, setDashboardData] = useState(null);

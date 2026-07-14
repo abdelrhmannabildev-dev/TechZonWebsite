@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout.jsx";
-import Home from "../pages/Home.jsx";
-import Products from "../pages/Products/Products.jsx";
+import Home from "../pages/users/Home.jsx";
+import Products from "../pages/users/Products/Products.jsx";
 
 
 import AdminLayout from "../layouts/AdminLayout.jsx";

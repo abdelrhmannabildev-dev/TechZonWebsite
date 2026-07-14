@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useFetchAdmin from "../../hooks/useFetchAdmin";
 import { useNavigate } from "react-router-dom";
-import Dashboard from "../../components/admin/dashboard/dashboard/Dashboard";
+import Dashboard from "../../components/admin/dashboard/Dashboard";
 
 function AdminPage() {
     const navigate = useNavigate();

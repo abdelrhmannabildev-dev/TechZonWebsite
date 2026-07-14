@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react"
 import "./Products.css"
-import ProductGrid from "../../components/users/products/ProductGrid/ProductGrid"
-import useFetchProducts from "../../hooks/useFetchProducts"
-import ProductFilters from "../../components/users/products/ProductFilters/ProductFilters"
-import filterProducts from "../../utils/filter"
+import ProductGrid from "../../../components/users/products/ProductGrid/ProductGrid"
+import useFetchProducts from "../../../hooks/useFetchProducts"
+import ProductFilters from "../../../components/users/products/ProductFilters/ProductFilters"
+import filterProducts from "../../../utils/filter"
+
 function Products() {
     const [products, loading, error] = useFetchProducts();
     const maxPrice =

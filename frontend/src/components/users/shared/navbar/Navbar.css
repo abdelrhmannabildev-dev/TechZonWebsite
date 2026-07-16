@@ -1,31 +1,35 @@
-nav{
+.navbar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 25px 30px;
-    background-color: var(--bg);
+    background-color: var(--surface-bg);
     box-shadow: var(--shadow);
     z-index: 999;
 }
 
-ul{
+.navbar ul{
     list-style-type: none;
     display: flex;
     gap: 20px;
 }
-.logo h1{
+.navbar .logo h1{
     font-weight: bold;
     font-size: 30px;
     color: var(--primary);
 }
-a{
+.navbar a{
     position: relative;
     text-decoration: none;
     color: var(--text);
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
-a::before{
+.navbar a::before{
     content: "";
     display: block;
     width: 0;
@@ -36,9 +40,9 @@ a::before{
     background-color: var(--text-h);
     transition: width 0.3s ease-in-out;
 }
-a:hover::before{
+.navbar a:hover::before{
     width: 100%;
 }
-a:hover{
+.navbar a:hover{
     color: var(--text-h);
 }

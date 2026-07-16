@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import RecentOrders from "./recentOrders/RecentOrders";
 import LowStockProducts from "./lowStockProducts/lowStockProducts";
 import "./Dashboard.css";
-function Dashboard() {
+function Dashboard({username}) {
     const [dashboardData, setDashboardData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -27,6 +27,7 @@ function Dashboard() {
   return (
     <>
         <div className="dashboard-container">
+            <h2>Welcome, {username}</h2>
             <div className="dashboard-statistics">
                 <div className="dashboard-card">
                     <h2>Total Orders</h2>

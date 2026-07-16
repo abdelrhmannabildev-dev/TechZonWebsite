@@ -1,0 +1,118 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+    backdrop-filter: blur(6px);
+}
+
+.modal {
+    width: min(520px, 95%);
+    background: var(--surface-bg);
+    color: var(--text);
+    border-radius: 1.15rem;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    animation: modalFade 0.25s ease;
+}
+
+.modal h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.55rem;
+    color: var(--text-h);
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.form-group label {
+    color: var(--text-h);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border-radius: 0.9rem;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text-h);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 4px rgba(38, 103, 255, 0.12);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.9rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.cancel-btn,
+.submit-btn {
+    padding: 0.95rem 1.2rem;
+    border-radius: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cancel-btn {
+    background: transparent;
+    color: var(--text-h);
+    border: 1px solid var(--border);
+}
+
+.cancel-btn:hover {
+    background: var(--accent-bg);
+}
+
+.submit-btn {
+    background: var(--primary);
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+.submit-btn:hover {
+    background: var(--secondary);
+}
+
+@keyframes modalFade {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 550px) {
+    .modal {
+        width: 92%;
+        padding: 1.5rem;
+    }
+}

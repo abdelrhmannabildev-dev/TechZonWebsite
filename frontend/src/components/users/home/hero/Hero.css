@@ -5,6 +5,8 @@
     "categories categories"
     "explore-btn explore-btn";
     min-height: 80vh;
+    width: 100%;
+
     margin-bottom: 40px;
     background: url("./images/hero.svg");
     background-size: cover;
@@ -55,7 +57,7 @@
     list-style: none;
     padding: 10px 20px;
     border-radius: 10px;
-    background-color: var(--bg);
+    background-color: var(--accent-bg);
     box-shadow: var(--shadow);
     color: var(--text);
     cursor: pointer;

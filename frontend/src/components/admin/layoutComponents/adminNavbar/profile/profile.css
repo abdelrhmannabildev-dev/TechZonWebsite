@@ -1,0 +1,65 @@
+.profile-popup {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+
+    width: 240px;
+    padding: 16px;
+
+    background: var(--surface-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    z-index: 1000;
+}
+
+.profile-popup::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    right: 22px;
+
+    width: 14px;
+    height: 14px;
+
+    background: var(--surface-bg);
+    border-left: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+
+    transform: rotate(45deg);
+}
+
+.profile-popup p {
+    color: var(--text-h);
+    font-size: 1rem;
+    font-weight: 600;
+
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.profile-popup .logout-btn {
+    width: 100%;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    background: var(--accent-bg);
+    color: var(--primary);
+
+    font-weight: 600;
+
+    transition: .2s ease;
+}
+
+.profile-popup .logout-btn:hover {
+    background: var(--primary);
+    color: white;
+}

@@ -8,7 +8,7 @@ import Products from "../pages/users/Products/Products.jsx";
 import AdminLayout from "../layouts/AdminLayout.jsx";
 import Admin from "../pages/admin/AdminPage.jsx";
 import AdminLogin from "../pages/admin/AdminLogin.jsx";
-import AdminProducts from "../components/admin/product/AdminProducts.jsx"
+import AdminProducts from "../pages/admin/AdminProducts.jsx"
 import AdminOrders from "../components/admin/orders/AdminOrders.jsx"
 
 

@@ -31,7 +31,7 @@ function AddToCart({ productId }) {
     };
 
     return (
-        <>s
+        <>
             <input
                 type="number"
                 ref={quantityRef}

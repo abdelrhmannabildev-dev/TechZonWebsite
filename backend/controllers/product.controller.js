@@ -3,22 +3,14 @@ const db = require("../database/db.js");
 //admins and users
 const getAllProducts = async (req, res) => {
     try {
-        const {category_id} = req.query;
 
-        let query = `SELECT
+        const [rows] = await db.query(`
+                    SELECT
                         products.*,
                         categories.name AS categoryName
                     FROM products
                     JOIN categories
-                    ON products.category_id = categories.id;`;
-        let params = [];
-
-        if (category_id) {
-            query += " WHERE category_id = ?";
-            params.push(category_id);
-        }
-
-        const [rows] = await db.query(query, params);
+                    ON products.category_id = categories.id`);
         res.json(rows);
     } catch (error) {
         console.error(error);
@@ -66,12 +58,12 @@ const getProductByIds = async (req, res) => {
 }
 // admins only
 const addProduct = async (req, res) => {
-    const { name, description, price, category_id , quantity } = req.body;
+    const { name, description, price, category_id , quantity, image_url } = req.body;
     if (!name || !price || !category_id ) {
         return res.status(400).json({ error: "All fields are required" });
     }
     try {
-        const [rows] = await db.query("INSERT INTO products (name, description, price, category_id , quantity) VALUES (?, ?, ?, ?,?)", [name, description, price, category_id , quantity||0]);
+        const [rows] = await db.query("INSERT INTO products (name, description, price, category_id , quantity, image) VALUES (?, ?, ?, ?, ?, ?)", [name, description, price, category_id , quantity||0, image_url || null]);
         res.status(201).json({ message: "Product created successfully" });
     } catch (error) {
         console.error(error);
@@ -81,9 +73,9 @@ const addProduct = async (req, res) => {
 
 const editProduct = async (req, res) => {
     const { id } = req.params;
-    const { name, description, price, category_id , quantity } = req.body;
+    const { name, description, price, category_id , quantity, image_url } = req.body;
     try {
-        await db.query("UPDATE products SET name = ?, description = ?, price = ?, category_id = ?, quantity = ? WHERE id = ?", [name, description, price, category_id , quantity, id]);
+        await db.query("UPDATE products SET name = ?, description = ?, price = ?, category_id = ?, quantity = ?, image = ? WHERE id = ?", [name, description, price, category_id , quantity, image_url || null, id]);
         res.status(200).json({ message: "Product updated successfully" });
     } catch (error) {
         console.error(error);

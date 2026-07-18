@@ -8,7 +8,8 @@ function ProductModal(props) {
         name: "",
         price: 0,
         quantity: "",
-        category: ""
+        category: "",
+        image_url: ""
     });
 
         
@@ -19,13 +20,16 @@ function ProductModal(props) {
                 name: selectedProduct.name,
                 price: selectedProduct.price,
                 quantity: selectedProduct.quantity,
-                category: selectedProduct.categoryName
+                category: selectedProduct.categoryName,
+                image_url: selectedProduct.image_url || ""
             });
         } else {
             setFormData({
                 name: "",
                 price: "",
-                quantity: ""
+                quantity: "",
+                category: "",
+                image_url: ""
             });
         }
     }, [selectedProduct]);
@@ -38,7 +42,8 @@ function ProductModal(props) {
             name: formData.name,
             price: formData.price,
             quantity: formData.quantity,
-            category_id: categoryObj ? categoryObj.id : null
+            category_id: categoryObj ? categoryObj.id : null,
+            image_url: formData.image_url
         };
 
         try {
@@ -53,13 +58,13 @@ function ProductModal(props) {
 
         setSelectedProduct(null);
         setMode(null);
-        setFormData({ name: "", price: "", quantity: "", category: "" });
+        setFormData({ name: "", price: "", quantity: "", category: "", image_url: "" });
         fetchProducts();
     }
     const handleCancel = () => {
         setSelectedProduct(null);
         setMode(null);
-        setFormData({ name: "", price: "", quantity: "", category: "" });
+        setFormData({ name: "", price: "", quantity: "", category: "", image_url: "" });
     };
 
   return (
@@ -141,6 +146,22 @@ function ProductModal(props) {
                         />
                     </div>
                     
+                    <div className="form-group">
+                        <label htmlFor="image_url">Image URL</label>
+                        <input
+                            type="text"
+                            id="image_url"
+                            placeholder="https://..."
+                            value={formData.image_url}
+                            onChange={(e) =>
+                                setFormData({
+                                    ...formData,
+                                    image_url: e.target.value
+                                })
+                            }
+                        />
+                    </div>
+
                     <div className="modal-actions">
                         <button type="button" className="cancel-btn" onClick={handleCancel}>Cancel</button>
                         <button type="submit" className="submit-btn">{mode === "add" ? "Add product" : "Save changes"}</button>

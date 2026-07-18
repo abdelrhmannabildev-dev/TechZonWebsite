@@ -1,39 +1,93 @@
-.productCard{
+.productCard {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    min-height: clamp(200px, 30vh, 400px);
+    gap: 16px;
+
     padding: 20px;
-    margin: 10px;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-}
-.productCard:hover{
+
+    background: var(--surface-bg);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
     box-shadow: var(--shadow);
-    translate: 0 -5px;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
 }
 
-.productCard h2{
-    font-size: 20px;
+.productCard:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--accent-border);
+
+    box-shadow:
+        0 20px 40px rgba(79, 70, 229, .15);
 }
 
-.bottomGroup{
+.productName {
+    color: var(--text-h);
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.productImage {
+    width: 100%;
+    aspect-ratio: 1;
+
+    object-fit: contain;
+
+    background: var(--surface-strong);
+
+    border-radius: 14px;
+
+    padding: 16px;
+}
+
+.bottomGroup {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-}
-.productPrice{
-    grid-area: price;
-    font-size: 16px;
-    color : var(--primary);
+
+    margin-top: auto;
 }
 
-.productQuantity{
-    grid-area: quantity;
-    font-size: 16px;
-    color : var(--text);
+.productPrice {
+    color: var(--primary);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.productQuantity {
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    background: var(--accent-soft);
+
+    color: var(--primary);
+
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .productCard {
+        padding: 16px;
+    }
+
+    .productName {
+        font-size: 1.05rem;
+    }
+
+    .productPrice {
+        font-size: .95rem;
+    }
 }

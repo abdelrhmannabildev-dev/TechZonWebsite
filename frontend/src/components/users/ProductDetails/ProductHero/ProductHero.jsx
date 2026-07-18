@@ -23,7 +23,7 @@ function ProductHero({product}) {
         <p className="product-quantity">
             {quantity} in stock
         </p>
-        <AddToCart productId={product.id} />
+        <AddToCart product={product} />
         </div>
         </div>
   )

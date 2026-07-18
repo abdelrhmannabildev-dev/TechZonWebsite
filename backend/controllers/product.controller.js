@@ -45,7 +45,25 @@ const getProductById = async (req, res) => {
         res.status(500).json({ error: "Internal server error" });
     }
 }
-
+const getProductByIds = async (req, res) => {
+    try {
+        const { ids } = req.body;
+        const [rows] = await db.query(`
+                    SELECT
+                        products.*,
+                        categories.name AS categoryName
+                    FROM products
+                    JOIN categories
+                    ON products.category_id = categories.id WHERE products.id IN (?)`, [ids]);
+        if (rows.length === 0) {
+            return res.status(404).json({ error: "Product not found" });
+        }
+        res.json(rows);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+}
 // admins only
 const addProduct = async (req, res) => {
     const { name, description, price, category_id , quantity } = req.body;
@@ -86,4 +104,4 @@ const deleteProduct = async (req, res) => {
         res.status(500).json({ error: "Internal server error" });
     }
 }
-module.exports = { getAllProducts, getProductById , addProduct , editProduct , deleteProduct };
+module.exports = { getAllProducts, getProductById,getProductByIds , addProduct , editProduct , deleteProduct };

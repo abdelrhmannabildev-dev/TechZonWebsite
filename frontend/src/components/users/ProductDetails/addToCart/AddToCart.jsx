@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import "./AddToCart.css";
 
 function AddToCart({ productId }) {
     const quantityRef = useRef();
@@ -10,27 +11,41 @@ function AddToCart({ productId }) {
 
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        const existing = cart.find(item => item.productId === productId);
+        const existing = cart.find(
+            item => item.productId === productId
+        );
 
         if (existing) {
             existing.quantity += quantity;
         } else {
-            cart.push({ productId, quantity });
+            cart.push({
+                productId,
+                quantity
+            });
         }
 
-        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem(
+            "cart",
+            JSON.stringify(cart)
+        );
     };
 
     return (
-        <>
+        <>s
             <input
-                ref={quantityRef}
                 type="number"
-                min="1"
-                defaultValue="1"
+                ref={quantityRef}
+                name="quantity"
+                id="quantity"
+                defaultValue={1}
+                min={1}
+                className="quantity-input"
             />
 
-            <button onClick={handleAddToCart}>
+            <button
+                className="addToCart"
+                onClick={handleAddToCart}
+            >
                 Add to Cart
             </button>
         </>

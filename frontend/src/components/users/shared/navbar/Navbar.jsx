@@ -14,7 +14,7 @@ function Navbar() {
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
             </ul>
-            <div className="cart">
+            <div>
                 <button className="cart-icon" onClick={handleCard}>🛒</button>
             </div>
         </nav>

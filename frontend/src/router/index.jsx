@@ -13,7 +13,7 @@ import AdminOrders from "../components/admin/orders/AdminOrders.jsx"
 import About from "../pages/users/about/About.jsx";
 import Contact from "../pages/users/contact/contact.jsx";
 import ProductPage from "../components/users/ProductDetails/ProductPage.jsx";
-
+import Cart from "../pages/users/Cart/Cart.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />
+      },
+      {
+        path: "cart",
+        element: <Cart />
       }
     ],
 

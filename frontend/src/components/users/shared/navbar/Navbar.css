@@ -46,6 +46,17 @@
 .navbar a:hover{
     color: var(--text-h);
 }
+.cart-icon{
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.cart-icon:hover{
+    rotate: 15deg;
+    scale: 1.1;
+    translate: 0 -5px;
+    filter: brightness(1.5);
+}
 @media (max-width: 500px) {
     .navbar {
         flex-direction: column;

@@ -16,7 +16,7 @@ const validateOrder = (req, res, next) => {
     });
     }
     for (const item of items) {
-    if (!item.product_id || !item.quantity) {
+    if (!item.productId || !item.quantity) {
         return res.status(400).json({
             error: "Invalid cart item"
         });

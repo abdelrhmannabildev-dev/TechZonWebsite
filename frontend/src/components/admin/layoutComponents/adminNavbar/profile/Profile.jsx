@@ -1,6 +1,7 @@
 import { useNavigate  } from "react-router-dom";
 import "./Profile.css"
 function Profile(props) {
+    const navigate = useNavigate()
     const user =props.user
     const handleLogout = () => {
         localStorage.removeItem("token");

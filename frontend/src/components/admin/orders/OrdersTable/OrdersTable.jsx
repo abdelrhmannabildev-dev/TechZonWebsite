@@ -1,6 +1,12 @@
 import Switcher from "./Switcher/Switcher"
 function OrdersTable({orders , setStatusToChange ,statusToChange ,setOrderIdToShow}) {
-
+    if (!orders || orders.length === 0) {
+        return (
+            <p className="empty-message">
+                No orders found.
+            </p>
+        );
+    }
   return (
     <div className="orders-table">
         <table>

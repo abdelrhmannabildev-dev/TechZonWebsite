@@ -29,7 +29,7 @@
 }
 
 @media (max-width: 1024px) {
- root {
+ :root {
    font-size: 16px;   
  }
 }
@@ -66,9 +66,10 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
-  width: 100vw;
 }
-
+/* html, body {
+    overflow-x: hidden;
+} */
 main {
   min-height: 80vh;
   width: 100%;
@@ -103,4 +104,8 @@ ul {
   list-style: none;
   display: flex;
   gap: 20px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }

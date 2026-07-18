@@ -35,7 +35,7 @@ const getProductById = async (req, res) => {
                         categories.name AS categoryName
                     FROM products
                     JOIN categories
-                    ON products.category_id = categories.id WHERE id = ?`, [id]);
+                    ON products.category_id = categories.id WHERE products.id = ?`, [id]);
         if (rows.length === 0) {
             return res.status(404).json({ error: "Product not found" });
         }

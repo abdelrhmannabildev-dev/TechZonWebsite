@@ -1,0 +1,57 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: min(1200px, 95%);
+    margin: 24px auto 16px;
+    padding: 12px 18px;
+
+    background: var(--surface-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.breadcrumbs button {
+    color: var(--muted);
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs button:hover {
+    color: var(--primary);
+}
+
+.breadcrumbs button:not(:last-child)::after {
+    content: "/";
+    margin-left: 12px;
+    color: var(--border);
+    pointer-events: none;
+}
+
+.breadcrumbs button:last-child {
+    margin-left: auto;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: var(--accent-bg);
+    color: var(--primary);
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.breadcrumbs button:last-child:hover {
+    background: var(--accent-soft);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .breadcrumbs {
+        padding: 10px 14px;
+        gap: 8px;
+        font-size: 0.9rem;
+    }
+
+    .breadcrumbs button:not(:last-child)::after {
+        margin-left: 8px;
+    }
+}

@@ -4,16 +4,18 @@ import { useNavigate } from "react-router-dom";
 import Profile from "./profile/Profile";
 import { useEffect , useState } from "react";
 import { adminGetInfo } from "../../../../api/admin/adminAuthApi";
+import useFetchAdmin from "../../../../hooks/useFetchAdmin";
 function AdminNavbar() {
     const navigate = useNavigate()
     const [user , setUser] = useState(null)
     const [showProfile, setShowProfile] = useState(false);
-    useEffect(() => {
-
-        adminGetInfo().then((data) => {
-            setUser(data)    
-        })
-    }, [])
+    const { adminInfo, loading, error } = useFetchAdmin();
+    
+    if (loading) return <p>Loading...</p>;
+    if (error) {
+        if (error.status === 401) navigate("/admin/login");
+        return <p>Error: {error.message}</p>;
+    }
     const  profileToggle= () => {
         setShowProfile(!showProfile);
     }
@@ -54,7 +56,7 @@ function AdminNavbar() {
                     </button>
                     {    
                         showProfile &&
-                        <Profile user = {user}/>
+                        <Profile user = {adminInfo}/>
                     }
                 </div>
             </div>

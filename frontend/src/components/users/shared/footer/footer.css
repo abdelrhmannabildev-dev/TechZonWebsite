@@ -5,7 +5,7 @@
         var(--bg),
         rgba(59,40,204,.08)
     );
-    width: 100vw;
+    width: 100%;
     border-top:1px solid var(--accent-border);
     padding:70px 8% 40px;
 }
@@ -94,7 +94,7 @@
     align-items:center;
     border-radius:50%;
     background:var(--accent);
-    color:var(--primary);
+    color:var(--surface-bg);
     transition:.35s;
     font-size:18px;
 }

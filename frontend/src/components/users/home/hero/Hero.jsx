@@ -1,6 +1,8 @@
 import "./Hero.css"
 import {useNavigate} from "react-router-dom"
 import laptop from "./images/laptop2.png"
+import { Link } from "react-router-dom"
+
 function Hero() {
     const navigate = useNavigate()
     const handleClick = () => {
@@ -14,10 +16,10 @@ function Hero() {
         </div>
             <div className="categories">
                 <ul>
-                    <li><h2>لابتوبات </h2></li>
-                    <li><h2>موبايلات </h2></li>
-                    <li><h2>شاشات </h2></li>
-                    <li><h2>إكسسوارات</h2></li>
+                    <li><Link to={"/products?category=accessories"}> <h2>accessories</h2> </Link ></li>
+                    <li><Link to={"/products?category=laptop"}> <h2>laptops</h2> </Link ></li>
+                    <li><Link to={"/products?category=monitors"}><h2>monitors</h2> </Link ></li>
+                    <li><Link to={"/products?categories=storage"}><h2>storages</h2></Link ></li>
                 </ul>
             </div>
                 {/* <img className="hero-image" src={laptop} alt="Hero" /> */}

@@ -1,14 +1,17 @@
-import "./ProductCard.css"
+import style from "./ProductCard.module.css"
+import { useNavigate } from "react-router-dom"
+
 function ProductCard(props) {
+    const navigate = useNavigate()
+
     const product = props.product
     const {name,price,quantity} = product
 return (
-    <div className="product-card">
-        <h2 className="product-name">{name}</h2>
-        {/* <img className="product-image" src={image} alt={name} /> */}
-        <div className="bottom-group">
-            <p className="product-price">Price: {price}</p>
-            <p className="product-quantity">Quantity: {quantity}</p>
+    <div className={style.productCard} onClick={() => navigate(`/products/${product.id}`)}>
+        <h2 className={style.productName}>{name}</h2>
+        <div className={style.bottomGroup}>
+            <p className={style.productPrice} >Price: {price}</p>
+            <p className={style.productQuantity} >Quantity: {quantity}</p>
         </div>
     </div>
 )

@@ -3,7 +3,7 @@ import { getOrdersDetailsById } from "../../../../api/admin/ordersApi";
 
 function OrderDetails({ orderId }) {
     const [order, setOrder] = useState(null);
-
+    
     useEffect(() => {
         getOrdersDetailsById(orderId)
             .then((data) => {

@@ -46,7 +46,7 @@
   transform: translateY(-1px);
 }
 
-.admin-actions {
+.admin-actions { 
   display: flex;
 position: relative;
   align-items: center;

@@ -10,7 +10,9 @@ import Admin from "../pages/admin/AdminPage.jsx";
 import AdminLogin from "../pages/admin/AdminLogin.jsx";
 import AdminProducts from "../pages/admin/AdminProducts.jsx"
 import AdminOrders from "../components/admin/orders/AdminOrders.jsx"
-
+import About from "../pages/users/about/About.jsx";
+import Contact from "../pages/users/contact/contact.jsx";
+import ProductPage from "../components/users/ProductDetails/ProductPage.jsx";
 
 
 const router = createBrowserRouter([
@@ -23,10 +25,23 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/products",
+        path: "products",
         element: <Products />,
+      },
+      {
+        path: "products/:id",
+        element: <ProductPage />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "contact",
+        element: <Contact />
       }
     ],
+
   },
   {
     path: "/admin",
@@ -45,12 +60,12 @@ const router = createBrowserRouter([
         path:"orders",
         element: <AdminOrders />
       },
-      {
-        path: "login",
-        element: <AdminLogin />,
-      }
     ],
     
+  },
+  {
+    path: "admin/login",
+    element: <AdminLogin />,
   }
 ]);
 

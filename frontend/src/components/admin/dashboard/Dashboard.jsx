@@ -7,6 +7,7 @@ function Dashboard({username}) {
     const [dashboardData, setDashboardData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    
     useEffect(() => {
         getDashboardData().then((data) => {
             setDashboardData(data);

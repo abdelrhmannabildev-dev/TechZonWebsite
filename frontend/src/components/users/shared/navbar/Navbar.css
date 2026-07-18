@@ -46,3 +46,20 @@
 .navbar a:hover{
     color: var(--text-h);
 }
+@media (max-width: 500px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .navbar .logo h1 {
+        font-size: 1.8rem;
+    }
+}

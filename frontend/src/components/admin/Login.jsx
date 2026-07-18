@@ -7,15 +7,17 @@ import "./Login.css";
 function Login() {
     const navigate = useNavigate();
     useEffect(() => {
+        getData();
+        
+    }, []);
+    const getData = async () => {
         const token = localStorage.getItem("token");
         if (token) {
-            const data =  adminGetInfo();
-            if (data) {
-                navigate("/admin");
-            }
-
+        const data = await adminGetInfo();
+        if (data) {
+            navigate("/admin");
         }
-    }, []);
+    }}
     const handleSubmit =async (e) => {
         e.preventDefault();
         const username = e.target.username.value;

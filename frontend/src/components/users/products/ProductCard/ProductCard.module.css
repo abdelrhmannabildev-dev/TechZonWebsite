@@ -1,4 +1,4 @@
-.product-card{
+.productCard{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,28 +11,28 @@
     cursor: pointer;
     transition: all 0.5s ease-in-out;
 }
-.product-card:hover{
+.productCard:hover{
     box-shadow: var(--shadow);
     translate: 0 -5px;
 }
 
-.product-card h2{
+.productCard h2{
     font-size: 20px;
 }
 
-.bottom-group{
+.bottomGroup{
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
 }
-.product-price{
+.productPrice{
     grid-area: price;
     font-size: 16px;
     color : var(--primary);
 }
 
-.product-quantity{
+.productQuantity{
     grid-area: quantity;
     font-size: 16px;
     color : var(--text);

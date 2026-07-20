@@ -11,7 +11,7 @@ function Hero() {
     return (
         <div className="hero">
             <div className="hero-txt">
-            <h1> أحدث أجهزة التكنولوجيا</h1>
+            <h1> TechZon : Your Gateway to Tech Excellence</h1>
             <p>Upgrade Your Tech Experience</p>
         </div>
             <div className="categories">

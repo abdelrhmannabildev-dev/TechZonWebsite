@@ -37,10 +37,10 @@ return (
         <div className="footer-col">
         <h3>Categories</h3>
         <ul>
-            <li><Link to="/products/laptops">Laptops</Link></li>
-            <li><Link to="/products/phones">Phones</Link></li>
-            <li><Link to="/products/gaming">Gaming</Link></li>
-            <li><Link to="/products/accessories">Accessories</Link></li>
+            <li><Link to="/products?category=laptop">Laptops</Link></li>
+            <li><Link to="/products?category=phone">Phones</Link></li>
+            <li><Link to="/products?category=gaming">Gaming</Link></li>
+            <li><Link to="/products?category=accessories">Accessories</Link></li>
         </ul>
 
         </div>

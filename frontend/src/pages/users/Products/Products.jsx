@@ -9,7 +9,6 @@ import { useSearchParams  } from "react-router-dom"
 function Products() {
     const [searchParams] = useSearchParams()
     const category=searchParams.get("category")
-    console.log(category)
     const [products, loading, error] = useFetchProducts();
     const maxPrice =
         products.length > 0
@@ -26,7 +25,6 @@ function Products() {
     useEffect(() => {
         setFilters({...filters, maxPrice:maxPrice})
     },[products])
-    console.log(products);
     const filteredProducts=filterProducts(products,filters)
     const state = loading ? "loading" : error ? "error" : products.length > 0 ? "success" : "empty";
     return (

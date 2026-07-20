@@ -8,7 +8,8 @@ function ProductPage() {
     const {id} = useParams();
     const [product, setProduct] = useState({});
     useEffect(() => {
-        getProductById(id).then((data) => setProduct(data))
+        getProductById(id).then((data) => {setProduct(data)
+        })
         .catch((error) => console.error(error));
     },[id]);
     return (

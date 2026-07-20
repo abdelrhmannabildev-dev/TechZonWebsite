@@ -1,7 +1,7 @@
 import "./productHero.css"
 import AddToCart from "../addToCart/AddToCart"
 function ProductHero({product}) {
-    const {name,old_price,price,quantity,image} = product
+    const {id,name,old_price,price,quantity,image} = product
     const discount =
     old_price && old_price > price
         ? Math.round(((old_price - price) / old_price) * 100)
@@ -23,7 +23,7 @@ function ProductHero({product}) {
         <p className="product-quantity">
             {quantity} in stock
         </p>
-        <AddToCart product={product} />
+        <AddToCart productId={id} />
         </div>
         </div>
   )

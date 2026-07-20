@@ -10,7 +10,7 @@ export const adminLogin = async (username, password) => {
 };
 export const adminGetInfo = async () => {
     const token = localStorage.getItem("token");
-    const response = await axios.get(`${API_URL}:3000/auth/me`, {
+    const response = await axios.get(`${API_URL}/auth/me`, {
         headers: {
             Authorization: `Bearer ${token}`},
         },

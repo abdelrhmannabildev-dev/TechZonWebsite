@@ -1,4 +1,4 @@
-import "./RecentOrders.css";
+import "./recentOrders.css";
 
 function RecentOrders({ orders }) {
     if (!orders || orders.length === 0) {

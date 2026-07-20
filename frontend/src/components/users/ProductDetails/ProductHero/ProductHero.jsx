@@ -1,5 +1,5 @@
 import "./productHero.css"
-import AddToCart from "../AddToCart/AddToCart"
+import AddToCart from "../addToCart/AddToCart"
 function ProductHero({product}) {
     const {name,old_price,price,quantity,image} = product
     const discount =

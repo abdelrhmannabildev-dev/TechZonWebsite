@@ -1,4 +1,4 @@
-import "./lowStockProducts.css";
+import "./LowStockProducts.css";
 
 function LowStockProducts({ products }) {
     if (!products || products.length === 0) {

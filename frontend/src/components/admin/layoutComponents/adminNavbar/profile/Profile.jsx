@@ -1,5 +1,5 @@
 import { useNavigate  } from "react-router-dom";
-import "./Profile.css"
+import "./profile.css"
 function Profile(props) {
     const navigate = useNavigate()
     const user =props.user

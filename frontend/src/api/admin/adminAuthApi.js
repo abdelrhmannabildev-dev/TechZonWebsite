@@ -1,7 +1,8 @@
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const adminLogin = async (username, password) => {
-    const response = await axios.post("http://localhost:3000/auth/login", {
+    const response = await axios.post(`${API_URL}/login`, {
         username,
         password,
     });
@@ -9,7 +10,7 @@ export const adminLogin = async (username, password) => {
 };
 export const adminGetInfo = async () => {
     const token = localStorage.getItem("token");
-    const response = await axios.get("http://localhost:3000/auth/me", {
+    const response = await axios.get(`${API_URL}:3000/auth/me`, {
         headers: {
             Authorization: `Bearer ${token}`},
         },

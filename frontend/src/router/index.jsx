@@ -11,7 +11,7 @@ import AdminLogin from "../pages/admin/AdminLogin.jsx";
 import AdminProducts from "../pages/admin/AdminProducts.jsx"
 import AdminOrders from "../components/admin/orders/AdminOrders.jsx"
 import About from "../pages/users/about/About.jsx";
-import Contact from "../pages/users/contact/contact.jsx";
+import Contact from "../pages/users/contact/Contact.jsx";
 import ProductPage from "../components/users/ProductDetails/ProductPage.jsx";
 import Cart from "../pages/users/Cart/Cart.jsx";
 

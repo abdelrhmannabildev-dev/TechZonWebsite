@@ -3,7 +3,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 export const getAllOrders = async () => {
     const token = localStorage.getItem("token");
-    const response = await axios.get(`${API_URL}:3000/order` , 
+    const response = await axios.get(`${API_URL}/order` , 
     {
         headers: {
             Authorization: `Bearer ${token}`
@@ -14,7 +14,7 @@ export const getAllOrders = async () => {
 };
 export const changeOrderStatus = async (ordersToUpdate) => {
     const token = localStorage.getItem("token");
-    const response = await axios.patch(`${API_URL}:3000/order/status` , ordersToUpdate , 
+    const response = await axios.patch(`${API_URL}/order/status` , ordersToUpdate , 
     {
         headers: {
             Authorization: `Bearer ${token}`
@@ -26,7 +26,7 @@ export const changeOrderStatus = async (ordersToUpdate) => {
 
 export const getOrdersDetailsById = async (orderId) => {
     const token = localStorage.getItem("token");
-    const response = await axios.get(`${API_URL}:3000/order/${orderId}` , 
+    const response = await axios.get(`${API_URL}/order/${orderId}` , 
     {
         headers: {
             Authorization: `Bearer ${token}`
